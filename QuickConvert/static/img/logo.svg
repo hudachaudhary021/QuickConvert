@@ -1,0 +1,21 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QuickConvert logo">
+  <defs>
+    <linearGradient id="qcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f9dff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#qcGrad)"/>
+
+  <path d="M14 12h10l6 6v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z"
+        fill="rgba(255,255,255,0.92)"/>
+  <path d="M24 12v6h6z" fill="rgba(255,255,255,0.55)"/>
+
+  <path d="M17 24h5m-5 4h9m-9 4h6"
+        stroke="#4f5bd4" stroke-width="1.6" stroke-linecap="round"/>
+
+  <path d="M29 30l4 4 4-4" stroke="#ffffff" stroke-width="2.2"
+        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M33 20v14" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

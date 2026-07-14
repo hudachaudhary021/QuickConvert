@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ - QuickConvert{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Support</p>
+  <h1>Frequently asked questions</h1>
+  <p class="page-header__sub">Everything you need to know about using QuickConvert.</p>
+</section>
+
+<section class="content-section content-section--narrow">
+  <div class="glass-panel accordion" id="faqAccordion">
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        Is QuickConvert really free to use?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>Yes. Converting Word to PDF and PDF to Word is completely free, with no watermarks or hidden fees.</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        What file formats are supported?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>You can upload .doc or .docx files to convert to PDF, and .pdf files to convert to Word (.docx).</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        Is there a file size limit?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>Yes, uploads are limited to 20MB per file to keep the service fast and reliable for everyone.</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        What happens to my files after conversion?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>Your uploaded file and the converted result are automatically deleted from our servers shortly after your download completes, and no later than 30 minutes after upload.</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        Will my formatting be preserved perfectly?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>QuickConvert preserves paragraphs, headings, lists, tables, and basic text styling (bold, italic, underline). Highly complex layouts may shift slightly between formats.</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        Do I need to create an account?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>No account or sign-up is required. Just upload your file and convert.</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <button class="accordion__trigger" aria-expanded="false">
+        Does QuickConvert work on mobile?
+        <span class="accordion__chevron">&#9662;</span>
+      </button>
+      <div class="accordion__panel">
+        <p>Yes, the interface is fully responsive and works on phones, tablets, laptops, and desktops.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

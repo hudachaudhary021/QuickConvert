@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}QuickConvert - Convert Word to PDF & PDF to Word{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">Free &middot; Fast &middot; Secure</p>
+    <h1>Convert files <span class="brand__accent">at the speed of thought.</span></h1>
+    <p class="hero__sub">
+      QuickConvert turns Word documents into polished PDFs and PDFs back into
+      editable Word files — right in your browser, with nothing left behind.
+    </p>
+    <ul class="hero__points">
+      <li>No sign-up required</li>
+      <li>Files auto-delete after conversion</li>
+      <li>Works on phone, tablet, and desktop</li>
+    </ul>
+  </div>
+
+  <div class="hero__art" aria-hidden="true">
+    <div class="doc-card doc-card--word">
+      <span class="doc-card__tag">DOCX</span>
+      <div class="doc-card__lines"><span></span><span></span><span></span></div>
+    </div>
+    <div class="doc-card__arrow">
+      <svg viewBox="0 0 24 24" width="32" height="32">
+        <path d="M4 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2"
+              fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="doc-card doc-card--pdf">
+      <span class="doc-card__tag">PDF</span>
+      <div class="doc-card__lines"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="converter" id="converter">
+  <div class="glass-panel tool-switch">
+    <button class="tool-switch__btn is-active" data-mode="word-to-pdf" id="tabWordToPdf">
+      Word &rarr; PDF
+    </button>
+    <button class="tool-switch__btn" data-mode="pdf-to-word" id="tabPdfToWord">
+      PDF &rarr; Word
+    </button>
+  </div>
+
+  <div class="glass-panel drop-panel">
+
+    <form id="convertForm">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button"
+           aria-label="Upload a file by dragging it here or clicking to browse">
+        <input type="file" id="fileInput" accept=".docx,.doc" hidden>
+        <div class="dropzone__icon">
+          <svg viewBox="0 0 24 24" width="40" height="40">
+            <path d="M12 16V4m0 0-4 4m4-4 4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"
+                  stroke="currentColor" stroke-width="1.8" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="dropzone__title" id="dropzoneTitle">Drag &amp; drop your .docx file here</p>
+        <p class="dropzone__sub">or click to browse &middot; max 20MB</p>
+        <p class="dropzone__file" id="fileNameDisplay"></p>
+      </div>
+
+      <div class="progress-bar" id="progressBar" hidden>
+        <div class="progress-bar__fill" id="progressFill"></div>
+      </div>
+
+      <p class="form-error" id="formError" role="alert"></p>
+
+      <button type="submit" class="btn btn--primary btn--full" id="convertBtn" disabled>
+        Convert now
+      </button>
+    </form>
+
+    <div class="result-card" id="resultCard" hidden>
+      <div class="result-card__icon">✓</div>
+      <p class="result-card__title">Your file is ready!</p>
+      <a href="#" class="btn btn--accent" id="downloadLink" download>Download file</a>
+      <button class="btn btn--ghost" id="convertAnotherBtn" type="button">Convert another file</button>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Why QuickConvert?</h2>
+  <div class="features__grid">
+    <div class="glass-panel feature-card">
+      <div class="feature-card__icon">⚡</div>
+      <h3>Instant conversion</h3>
+      <p>Documents are processed the moment they're uploaded — no queues, no waiting.</p>
+    </div>
+    <div class="glass-panel feature-card">
+      <div class="feature-card__icon">🔒</div>
+      <h3>Privacy first</h3>
+      <p>Every uploaded and converted file is automatically deleted from our servers shortly after use.</p>
+    </div>
+    <div class="glass-panel feature-card">
+      <div class="feature-card__icon">📱</div>
+      <h3>Any device</h3>
+      <p>A responsive interface that works beautifully on phones, tablets, laptops, and desktops.</p>
+    </div>
+    <div class="glass-panel feature-card">
+      <div class="feature-card__icon">🆓</div>
+      <h3>Completely free</h3>
+      <p>No subscriptions, no watermarks, no hidden limits on the core conversion tools.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  window.QUICKCONVERT_ENDPOINTS = {
+    wordToPdf: "{{ url_for('word_to_pdf_route') }}",
+    pdfToWord: "{{ url_for('pdf_to_word_route') }}"
+  };
+</script>
+{% endblock %}

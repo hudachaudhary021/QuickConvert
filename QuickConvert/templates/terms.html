@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Terms & Conditions - QuickConvert{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Legal</p>
+  <h1>Terms &amp; Conditions</h1>
+  <p class="page-header__sub">Last updated: {{ current_year }}</p>
+</section>
+
+<section class="content-section content-section--narrow">
+  <div class="glass-panel content-card">
+    <h2>1. Acceptance of terms</h2>
+    <p>
+      By using QuickConvert, you agree to these Terms &amp; Conditions. If you
+      do not agree, please do not use the service.
+    </p>
+
+    <h2>2. Description of service</h2>
+    <p>
+      QuickConvert provides an online tool to convert Word documents to PDF
+      and PDF documents to Word format. The service is provided "as is"
+      without warranties of any kind.
+    </p>
+
+    <h2>3. Acceptable use</h2>
+    <p>
+      You agree not to upload files that are illegal, infringe on
+      intellectual property rights, contain malware, or violate the rights
+      of any third party. We reserve the right to refuse processing of any
+      file that appears to violate these terms.
+    </p>
+
+    <h2>4. File size and format limits</h2>
+    <p>
+      Uploads are limited to 20MB and must be valid .doc, .docx, or .pdf
+      files. Files that fail validation will be rejected before conversion.
+    </p>
+
+    <h2>5. No storage guarantee</h2>
+    <p>
+      Uploaded and converted files are temporary and are automatically
+      deleted from our servers. QuickConvert is not a storage service and
+      is not responsible for retaining your files beyond the conversion
+      session.
+    </p>
+
+    <h2>6. Limitation of liability</h2>
+    <p>
+      QuickConvert is not liable for any loss of data, formatting
+      discrepancies, or damages arising from the use of this service. Always
+      keep a backup of your original files.
+    </p>
+
+    <h2>7. Changes to the service</h2>
+    <p>
+      We may modify, suspend, or discontinue any part of QuickConvert at any
+      time without prior notice.
+    </p>
+
+    <h2>8. Governing law</h2>
+    <p>
+      These terms are governed by applicable local law in the jurisdiction
+      where QuickConvert is operated, without regard to conflict-of-law
+      principles.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      Questions about these terms can be sent via our
+      <a href="{{ url_for('contact') }}">Contact page</a>.
+    </p>
+  </div>
+</section>
+{% endblock %}
