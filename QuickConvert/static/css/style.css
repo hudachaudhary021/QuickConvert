@@ -1,23 +1,23 @@
 /* ==========================================================================
    QuickConvert — Design tokens
-   Palette: deep indigo/navy canvas with electric blue -> violet gradient
-   accent, representing the "conversion" / transformation between formats.
+   Palette: Fresh Mint — clean white/light canvas with a mint-to-teal
+   gradient accent. Minimal, trustworthy, classic SaaS look.
    Type: Space Grotesk (display) + Inter (body)
    ========================================================================== */
 
 :root {
-  --color-bg-deep: #0d1024;
-  --color-bg-mid: #131a3a;
-  --color-glass: rgba(255, 255, 255, 0.06);
-  --color-glass-border: rgba(255, 255, 255, 0.14);
-  --color-glass-strong: rgba(255, 255, 255, 0.1);
-  --color-text-primary: #f3f4fb;
-  --color-text-muted: #a8adc9;
-  --color-accent-blue: #4f9dff;
-  --color-accent-violet: #8b5cf6;
+  --color-bg-deep: #eaf7f2;
+  --color-bg-mid: #ffffff;
+  --color-glass: rgba(255, 255, 255, 0.75);
+  --color-glass-border: rgba(15, 107, 82, 0.14);
+  --color-glass-strong: rgba(255, 255, 255, 0.9);
+  --color-text-primary: #0b1f19;
+  --color-text-muted: #5b736c;
+  --color-accent-blue: #0fae7f;
+  --color-accent-violet: #22c3a6;
   --color-accent-gradient: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-violet));
-  --color-success: #34d399;
-  --color-error: #f87171;
+  --color-success: #16a34a;
+  --color-error: #dc2626;
 
   --font-display: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
@@ -26,7 +26,7 @@
   --radius-md: 14px;
   --radius-sm: 8px;
 
-  --shadow-glass: 0 8px 32px rgba(4, 6, 20, 0.45);
+  --shadow-glass: 0 8px 28px rgba(15, 60, 45, 0.08);
   --transition-fast: 0.18s ease;
   --transition-med: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -47,7 +47,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: radial-gradient(circle at 20% 0%, var(--color-bg-mid), var(--color-bg-deep) 60%);
+  background: radial-gradient(circle at 20% 0%, var(--color-bg-deep), var(--color-bg-mid) 55%);
   color: var(--color-text-primary);
   min-height: 100vh;
   overflow-x: hidden;
@@ -108,7 +108,7 @@ ul {
   position: fixed;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.35;
+  opacity: 0.28;
   z-index: -1;
   pointer-events: none;
 }
@@ -117,14 +117,14 @@ ul {
   height: 480px;
   top: -140px;
   left: -120px;
-  background: var(--color-accent-blue);
+  background: #b9f5df;
 }
 .bg-glow--two {
   width: 420px;
   height: 420px;
   bottom: -160px;
   right: -100px;
-  background: var(--color-accent-violet);
+  background: #cdeeff;
 }
 
 /* ==========================================================================
@@ -158,7 +158,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background: rgba(13, 16, 36, 0.55);
+  background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--color-glass-border);
   border-radius: 999px;
   backdrop-filter: blur(16px);
@@ -310,6 +310,7 @@ ul {
   flex-direction: column;
   gap: 14px;
   animation: float 5s ease-in-out infinite;
+  box-shadow: 0 6px 20px rgba(15, 60, 45, 0.08);
 }
 
 .doc-card--pdf {
@@ -330,6 +331,7 @@ ul {
   border-radius: 6px;
   width: fit-content;
   background: var(--color-accent-gradient);
+  color: #fff;
 }
 
 .doc-card__lines {
@@ -343,13 +345,13 @@ ul {
 .doc-card__lines span {
   height: 6px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(15, 107, 82, 0.15);
 }
 .doc-card__lines span:nth-child(2) { width: 80%; }
 .doc-card__lines span:nth-child(3) { width: 55%; }
 
 .doc-card__arrow {
-  color: var(--color-accent-violet);
+  color: var(--color-accent-blue);
   display: flex;
   align-items: center;
 }
@@ -405,7 +407,7 @@ ul {
 .dropzone:hover,
 .dropzone.is-dragover {
   border-color: var(--color-accent-blue);
-  background: rgba(79, 157, 255, 0.06);
+  background: rgba(15, 174, 127, 0.06);
 }
 
 .dropzone__icon {
@@ -436,7 +438,7 @@ ul {
 .progress-bar {
   height: 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 107, 82, 0.1);
   margin-top: 20px;
   overflow: hidden;
 }
@@ -471,7 +473,7 @@ ul {
 .btn--primary {
   background: var(--color-accent-gradient);
   color: #fff;
-  box-shadow: 0 8px 24px rgba(79, 157, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(15, 174, 127, 0.28);
 }
 
 .btn--primary:disabled {
@@ -486,7 +488,7 @@ ul {
 
 .btn--accent {
   background: var(--color-success);
-  color: #06231a;
+  color: #ffffff;
 }
 
 .btn--ghost {
@@ -513,7 +515,7 @@ ul {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: rgba(52, 211, 153, 0.15);
+  background: rgba(22, 163, 74, 0.12);
   color: var(--color-success);
   display: flex;
   align-items: center;
@@ -700,7 +702,7 @@ ul {
 
 .contact-form input,
 .contact-form textarea {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--color-glass-border);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
@@ -739,14 +741,14 @@ ul {
 }
 
 .flash--success {
-  background: rgba(52, 211, 153, 0.12);
-  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(22, 163, 74, 0.1);
+  border-color: rgba(22, 163, 74, 0.3);
   color: var(--color-success);
 }
 
 .flash--error {
-  background: rgba(248, 113, 113, 0.12);
-  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.3);
   color: var(--color-error);
 }
 
@@ -957,7 +959,7 @@ ul {
     top: calc(100% + 10px);
     left: 24px;
     right: 24px;
-    background: rgba(13, 16, 36, 0.92);
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid var(--color-glass-border);
     border-radius: var(--radius-md);
     flex-direction: column;
@@ -982,7 +984,7 @@ ul {
   }
 
   .nav-menu a.is-active {
-    background: rgba(79, 157, 255, 0.12);
+    background: rgba(15, 174, 127, 0.1);
   }
 
   .footer-inner {
