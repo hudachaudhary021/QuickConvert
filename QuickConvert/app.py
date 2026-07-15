@@ -281,16 +281,10 @@ def download_file(folder, filename):
     if not os.path.isfile(file_path):
         return render_template("404.html"), 404
 
-    @after_this_request
-    def remove_after_send(response):
-        # Delete the converted file shortly after it has been sent to the user.
-        def _delayed_delete(path):
-            time.sleep(5)
-            safe_remove(path)
-
-        threading.Thread(target=_delayed_delete, args=(file_path,), daemon=True).start()
-        return response
-
+    # Files are cleaned up by the background sweep (every 5 minutes,
+    # anything older than 30 minutes) instead of deleting immediately
+    # after the first download. This avoids corrupting downloads if a
+    # mobile browser retries or re-requests the same file link.
     return send_file(file_path, as_attachment=True)
 
 
