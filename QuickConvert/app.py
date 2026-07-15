@@ -22,6 +22,7 @@ from utils.converter import (
     convert_pdf_to_word,
     ConversionError,
 )
+from utils.blog_data import BLOG_POSTS
 
 # --------------------------------------------------------------------------
 # App configuration
@@ -154,6 +155,26 @@ def terms():
 @app.route("/faq")
 def faq():
     return render_template("faq.html", active_page="faq")
+
+
+@app.route("/blog")
+def blog():
+    return render_template("blog.html", active_page="blog", posts=BLOG_POSTS)
+
+
+@app.route("/blog/<slug>")
+def blog_post(slug):
+    post = next((p for p in BLOG_POSTS if p["slug"] == slug), None)
+    if post is None:
+        return render_template("404.html"), 404
+    return render_template("blog_post.html", active_page="blog", post=post)
+
+
+@app.route("/ads.txt")
+def ads_txt():
+    """Serve ads.txt at the site root, required by Google AdSense."""
+    content = "google.com, pub-3874660214976289, DIRECT, f08c47fec0942fa0\n"
+    return app.response_class(content, mimetype="text/plain")
 
 
 # --------------------------------------------------------------------------
