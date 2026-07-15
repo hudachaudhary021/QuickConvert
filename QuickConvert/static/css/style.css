@@ -571,6 +571,65 @@ ul {
 }
 
 /* ==========================================================================
+   Blog
+   ========================================================================== */
+
+.blog-index {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blog-card {
+  display: block;
+  padding: 26px 28px;
+  transition: transform var(--transition-med), border-color var(--transition-fast);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-blue);
+}
+
+.blog-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.blog-card__desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.blog-card__meta {
+  color: var(--color-accent-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.blog-article h2 {
+  font-size: 1.15rem;
+}
+
+.blog-article__cta {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.blog-article__cta p {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==========================================================================
    Generic content pages
    ========================================================================== */
 
