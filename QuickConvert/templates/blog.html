@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - QuickConvert{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Guides &amp; tips</p>
+  <h1>The QuickConvert blog</h1>
+  <p class="page-header__sub">
+    Practical, no-nonsense guides on converting, formatting, and sharing
+    Word and PDF documents.
+  </p>
+</section>
+
+<section class="content-section content-section--narrow blog-index">
+  {% for post in posts %}
+  <a href="{{ url_for('blog_post', slug=post.slug) }}" class="glass-panel blog-card">
+    <h2>{{ post.title }}</h2>
+    <p class="blog-card__desc">{{ post.description }}</p>
+    <span class="blog-card__meta">{{ post.read_time }} &middot; Read article &rarr;</span>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}
